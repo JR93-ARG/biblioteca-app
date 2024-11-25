@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Biblioteca</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+  <title>Gestión de Biblioteca</title> <!-- Título de la página -->
+  <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al archivo de estilos CSS -->
 </head>
 <body>
   <header>
-    <h1>Gestión de Biblioteca</h1>
+    <h1>Gestión de Biblioteca</h1> <!-- Encabezado principal de la página -->
   </header>
 
   <main>
     <section id="gestion-libros">
-      <h2>Gestión de Libros</h2>
-      <form id="form-libros">
-        <input type="text" id="titulo" placeholder="Título" required>
-        <input type="text" id="autor" placeholder="Autor" required>
-        <input type="text" id="genero" placeholder="Género" required>
-        <input type="number" id="anio" placeholder="Año" required>
-        <button type="submit">Añadir Libro</button>
+      <h2>Gestión de Libros</h2> <!-- Encabezado de la sección de gestión de libros -->
+      <form id="form-libros"> <!-- Formulario para añadir nuevos libros -->
+        <input type="text" id="titulo" placeholder="Título" required> <!-- Campo para el título del libro -->
+        <input type="text" id="autor" placeholder="Autor" required> <!-- Campo para el autor del libro -->
+        <input type="text" id="genero" placeholder="Género" required> <!-- Campo para el género del libro -->
+        <input type="number" id="anio" placeholder="Año" required> <!-- Campo para el año del libro -->
+        <button type="submit">Añadir Libro</button> <!-- Botón para enviar el formulario -->
       </form>
-      <table id="tabla-libros">
+      <table id="tabla-libros"> <!-- Tabla para mostrar los libros -->
         <thead>
           <tr>
             <th>Título</th>
@@ -31,53 +31,53 @@
             <th>Disponibilidad</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody></tbody> <!-- Cuerpo de la tabla donde se insertarán las filas de libros -->
       </table>
     </section>
 
     <section id="gestion-miembros">
-      <h2>Gestión de Miembros</h2>
-      <form id="form-miembros">
-        <input type="text" id="nombre-miembro" placeholder="Nombre" required>
-        <input type="number" id="id-miembro" placeholder="ID" required>
-        <button type="submit">Añadir Miembro</button>
-        <span id="mensaje-error" class="error"></span>
+      <h2>Gestión de Miembros</h2> <!-- Encabezado de la sección de gestión de miembros -->
+      <form id="form-miembros"> <!-- Formulario para añadir nuevos miembros -->
+        <input type="text" id="nombre-miembro" placeholder="Nombre" required> <!-- Campo para el nombre del miembro -->
+        <input type="number" id="id-miembro" placeholder="ID" required> <!-- Campo para el ID del miembro -->
+        <button type="submit">Añadir Miembro</button> <!-- Botón para enviar el formulario -->
+        <span id="mensaje-error" class="error"></span> <!-- Mensaje de error -->
       </form>
-      <table id="tabla-miembros">
+      <table id="tabla-miembros"> <!-- Tabla para mostrar los miembros -->
         <thead>
           <tr>
             <th>Nombre</th>
             <th>ID</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody></tbody> <!-- Cuerpo de la tabla donde se insertarán las filas de miembros -->
       </table>
     </section>
 
     <section id="prestamos">
-      <h2>Préstamos de Libros</h2>
-      <form id="form-prestamo">
-        <select id="miembro-select" required>
+      <h2>Préstamos de Libros</h2> <!-- Encabezado de la sección de préstamos de libros -->
+      <form id="form-prestamo"> <!-- Formulario para registrar un préstamo -->
+        <select id="miembro-select" required> <!-- Selector para elegir un miembro -->
           <option value="">Seleccione un miembro</option>
         </select>
-        <select id="libro-select" required>
+        <select id="libro-select" required> <!-- Selector para elegir un libro -->
           <option value="">Seleccione un libro</option>
         </select>
-        <button type="submit">Tomar Prestado</button>
+        <button type="submit">Tomar Prestado</button> <!-- Botón para enviar el formulario -->
       </form>
-      <form id="form-devolucion">
-        <select id="miembro-select-devolucion" required>
+      <form id="form-devolucion"> <!-- Formulario para registrar una devolución -->
+        <select id="miembro-select-devolucion" required> <!-- Selector para elegir un miembro -->
           <option value="">Seleccione un miembro</option>
         </select>
-        <select id="libro-select-devolucion" required>
+        <select id="libro-select-devolucion" required> <!-- Selector para elegir un libro -->
           <option value="">Seleccione un libro</option>
         </select>
-        <button type="submit">Devolver Libro</button>
+        <button type="submit">Devolver Libro</button> <!-- Botón para enviar el formulario -->
       </form>
-      <div id="mensaje"></div>
+      <div id="mensaje"></div> <!-- Div para mostrar mensajes -->
     </section>
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></script> <!-- Enlace al archivo JavaScript -->
 </body>
 </html>

@@ -134,6 +134,7 @@ form input[type="file"]:hover {
 
 table {
     width: 100%;
+    background-color: #eaedf0;
     border-collapse: collapse;
     margin-top: 20px;
 }
@@ -152,13 +153,7 @@ table th {
     color: white;
 }
 
-table tr:nth-child(even) {
-    background: #f2f2f2;
-}
 
-table tr:hover {
-    background: #f9f9f9;
-}
 
 #libros-disponibles {
     margin-top: 20px;
