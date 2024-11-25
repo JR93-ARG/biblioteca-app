@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Biblioteca</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Biblioteca</h1>
+  </header>
+
+  <main>
+    <section id="gestion-libros">
+      <h2>Gestión de Libros</h2>
+      <form id="form-libros">
+        <input type="text" id="titulo" placeholder="Título" required>
+        <input type="text" id="autor" placeholder="Autor" required>
+        <input type="text" id="genero" placeholder="Género" required>
+        <input type="number" id="anio" placeholder="Año" required>
+        <button type="submit">Añadir Libro</button>
+      </form>
+      <table id="tabla-libros">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Género</th>
+            <th>Año</th>
+            <th>Disponibilidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="gestion-miembros">
+      <h2>Gestión de Miembros</h2>
+      <form id="form-miembros">
+        <input type="text" id="nombre-miembro" placeholder="Nombre" required>
+        <input type="number" id="id-miembro" placeholder="ID" required>
+        <button type="submit">Añadir Miembro</button>
+        <span id="mensaje-error" class="error"></span>
+      </form>
+      <table id="tabla-miembros">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>ID</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="prestamos">
+      <h2>Préstamos de Libros</h2>
+      <form id="form-prestamo">
+        <select id="miembro-select" required>
+          <option value="">Seleccione un miembro</option>
+        </select>
+        <select id="libro-select" required>
+          <option value="">Seleccione un libro</option>
+        </select>
+        <button type="submit">Tomar Prestado</button>
+      </form>
+      <form id="form-devolucion">
+        <select id="miembro-select-devolucion" required>
+          <option value="">Seleccione un miembro</option>
+        </select>
+        <select id="libro-select-devolucion" required>
+          <option value="">Seleccione un libro</option>
+        </select>
+        <button type="submit">Devolver Libro</button>
+      </form>
+      <div id="mensaje"></div>
+    </section>
+
+    <section id="consultas">
+      <h2>Consultas</h2>
+      <button id="mostrar-libros">Mostrar Libros Disponibles</button>
+      <div id="libros-disponibles"></div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url(imagenBiblioteca.png) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #080808;
+}
+
+header {
+    background: #084285;
+    padding: 10px 0;
+}
+
+
+
+nav ul {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+}
+
+
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/*/ingresar el hover /*/
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px;
+}
+
+section {
+    background: rgba(166, 202, 229, 0.788);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form input {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background: #084285;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #326099;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background: #326099;
+    color: rgb(0, 0, 0);
+}
+
+#libros-disponibles {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f1f1f17a;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+}
