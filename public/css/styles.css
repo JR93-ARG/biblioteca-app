@@ -12,11 +12,15 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     color: #080808;
+    margin: 0;
 }
 
 header {
     background: #084285;
     padding: 10px 0;
+    color: white;
+    text-align: center;
+
 }
 
 
@@ -55,10 +59,16 @@ section {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 form {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
 }
 
 form input {

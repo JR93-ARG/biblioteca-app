@@ -109,6 +109,16 @@ router.post('/prestamos', async (req, res) => {
 router.post('/devoluciones', async (req, res) => {
     const { idMiembro, idLibro } = req.body;
     try {
+        // Verificar que el miembro que devuelve el libro sea el mismo que lo pidió prestado
+        const [rows] = await pool.query(
+            'SELECT * FROM prestamos WHERE miembro_id = ? AND libro_id = ? AND fecha_devolucion IS NULL',
+            [idMiembro, idLibro]
+        );
+
+        if (rows.length === 0) {
+            return res.status(400).json({ error: 'El miembro no tiene este libro prestado o ya fue devuelto' });
+        }
+
         // Marcar el libro como disponible
         await pool.query('UPDATE libros SET disponible = true WHERE id = ?', [idLibro]);
 
