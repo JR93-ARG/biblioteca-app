@@ -23,10 +23,6 @@ async function loadLibros() {
       <td>${libro.genero}</td>
       <td>${libro.anio}</td>
       <td>${libro.disponible ? 'Disponible' : 'No Disponible'}</td>
-      <td>
-        <button onclick="editarLibro(${libro.id})">Editar</button>
-        <button onclick="eliminarLibro(${libro.id})">Eliminar</button>
-      </td>
     `;
     itemTableBody.appendChild(row);
   });
@@ -67,10 +63,6 @@ async function loadMiembros() {
     row.innerHTML = `
       <td>${miembro.nombre}</td>
       <td>${miembro.id}</td>
-      <td>
-        <button onclick="editarMiembro(${miembro.id})">Editar</button>
-        <button onclick="eliminarMiembro(${miembro.id})">Eliminar</button>
-      </td>
     `;
     itemTableBody.appendChild(row);
   });
