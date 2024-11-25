@@ -25,6 +25,3 @@ Accede a la aplicación en `http://localhost:3000` y utiliza la interfaz para ge
 - `public/`: Contiene los archivos estáticos (HTML, CSS, JS).
 - `README.md`: Este archivo.
 
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que desees realizar.
