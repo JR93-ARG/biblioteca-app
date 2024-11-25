@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 body {
@@ -13,22 +15,29 @@ body {
     background-repeat: no-repeat;
     color: #080808;
     margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f1f1f1;
 }
+
 
 header {
     background: #084285;
     padding: 10px 0;
     color: white;
     text-align: center;
-
 }
-
-
 
 nav ul {
     display: flex;
     justify-content: left;
     list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+
 }
 
 
@@ -37,7 +46,7 @@ nav ul li {
     margin: 0 15px;
 }
 
-/*/ingresar el hover /*/
+
 
 nav ul li a {
     color: white;
@@ -52,6 +61,8 @@ main {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 section {
@@ -59,24 +70,31 @@ section {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
 }
+
+section h2 {
+    margin-bottom: 20px;   
+}
+
 
 form {
     margin-bottom: 20px;
     display: flex;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
 }
+
 
 form input {
     margin-right: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 200px;
 }
+
 
 form button {
     padding: 10px 15px;
@@ -91,6 +109,29 @@ form button:hover {
     background: #326099;
 }
 
+form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+form label {
+    margin-right: 10px;
+}
+
+form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+form input[type="file"]:hover {
+    background: #326099;
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -103,9 +144,20 @@ table th, table td {
     text-align: left;
 }
 
+
 table th {
     background: #326099;
     color: rgb(0, 0, 0);
+    font-weight: bold;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+table tr:hover {
+    background: #f9f9f9;
 }
 
 #libros-disponibles {
@@ -118,4 +170,23 @@ table th {
 
 .error {
     color: red;
+    font-size: 14px;
+    margin-top: 10px;
+
 }
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.prestamosLibros{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
