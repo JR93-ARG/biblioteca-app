@@ -1,10 +1,10 @@
-// Definición de las URLs de las APIs para libros, miembros, préstamos y devoluciones
+//! Definición de las URLs de las APIs para libros, miembros, préstamos y devoluciones
 const apiUrlLibros = 'http://localhost:3000/api/libros';
 const apiUrlMiembros = 'http://localhost:3000/api/miembros';
 const apiUrlPrestamos = 'http://localhost:3000/api/prestamos';
 const apiUrlDevoluciones = 'http://localhost:3000/api/devoluciones';
 
-// Función para cargar todos los libros desde la API
+//! Función para cargar todos los libros desde la API
 async function loadLibros() {
   // Realiza una solicitud GET a la API de libros
   const response = await fetch(apiUrlLibros);
@@ -57,7 +57,7 @@ async function loadLibros() {
   });
 }
 
-// Función para cargar todos los miembros desde la API
+//! Función para cargar todos los miembros desde la API
 async function loadMiembros() {
   // Realiza una solicitud GET a la API de miembros
   const response = await fetch(apiUrlMiembros);
@@ -105,7 +105,7 @@ async function loadMiembros() {
   });
 }
 
-// Función para guardar un nuevo libro en la API
+//! Función para guardar un nuevo libro en la API
 async function guardarLibro(event) {
   event.preventDefault(); // Previene el comportamiento por defecto del formulario
   // Obtiene los valores de los campos del formulario
@@ -136,7 +136,7 @@ async function guardarLibro(event) {
   loadLibros();
 }
 
-// Función para guardar un nuevo miembro en la API
+//! Función para guardar un nuevo miembro en la API
 async function guardarMiembro(event) {
   event.preventDefault(); // Previene el comportamiento por defecto del formulario
   // Obtiene los valores de los campos del formulario
@@ -165,7 +165,7 @@ async function guardarMiembro(event) {
   loadMiembros();
 }
 
-// Función para tomar prestado un libro
+//! Función para tomar prestado un libro
 async function tomarPrestado(event) {
   event.preventDefault(); // Previene el comportamiento por defecto del formulario
   // Obtiene los valores seleccionados de los selectores
@@ -195,7 +195,7 @@ async function tomarPrestado(event) {
   document.getElementById('mensaje').textContent = 'Libro tomado prestado correctamente';
 }
 
-// Función para devolver un libro
+//! Función para devolver un libro
 async function devolverLibro(event) {
   event.preventDefault(); // Previene el comportamiento por defecto del formulario
   // Obtiene los valores seleccionados de los selectores
@@ -225,13 +225,13 @@ async function devolverLibro(event) {
   document.getElementById('mensaje').textContent = 'Libro devuelto correctamente';
 }
 
-// Inicializa el evento de envío del formulario para cada formulario específico
+//! Inicializa el evento de envío del formulario para cada formulario específico
 document.getElementById('form-libros').addEventListener('submit', guardarLibro);
 document.getElementById('form-miembros').addEventListener('submit', guardarMiembro);
 document.getElementById('form-prestamo').addEventListener('submit', tomarPrestado);
 document.getElementById('form-devolucion').addEventListener('submit', devolverLibro);
 
-// Carga los datos de libros y miembros cuando el documento está completamente cargado
+//! Carga los datos de libros y miembros cuando el documento está completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
   loadLibros();
   loadMiembros();

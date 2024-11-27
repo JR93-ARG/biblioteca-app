@@ -5,9 +5,9 @@ const router = express.Router();
 // Importa el pool de conexiones a la base de datos desde el archivo db.js
 const pool = require('../db');
 
-// Rutas para libros
+//! Rutas para libros
 
-// Ruta para crear un nuevo libro
+// !Ruta para crear un nuevo libro
 router.post('/libros', async (req, res) => {
     // Extrae los datos del libro del cuerpo de la solicitud
     const { titulo, autor, genero, anio } = req.body;
@@ -25,7 +25,7 @@ router.post('/libros', async (req, res) => {
     }
 });
 
-// Ruta para obtener todos los libros
+//! Ruta para obtener todos los libros
 router.get('/libros', async (req, res) => {
     try {
         // Consulta todos los libros en la base de datos
@@ -38,50 +38,9 @@ router.get('/libros', async (req, res) => {
     }
 });
 
-// Ruta para actualizar un libro por ID
-router.put('/libros/:id', async (req, res) => {
-    // Extrae el ID del libro de los parámetros de la URL
-    const { id } = req.params;
-    // Extrae los datos del libro del cuerpo de la solicitud
-    const { titulo, autor, genero, anio } = req.body;
-
-    try {
-        // Actualiza el libro en la base de datos
-        const [result] = await pool.query(
-            'UPDATE libros SET titulo = ?, autor = ?, genero = ?, anio = ? WHERE id = ?',
-            [titulo, autor, genero, anio, id]
-        );
-
-        // Verifica si el libro fue encontrado y actualizado
-        if (result.affectedRows === 0) return res.status(404).json({ error: 'Libro no encontrado' });
-        // Responde con un mensaje de éxito
-        res.json({ message: 'Libro actualizado correctamente' });
-    } catch (error) {
-        // Maneja errores y responde con un mensaje de error
-        res.status(500).json({ error: 'Error al actualizar el libro' });
-    }
-});
-
-// Ruta para eliminar un libro por ID
-router.delete('/libros/:id', async (req, res) => {
-    // Extrae el ID del libro de los parámetros de la URL
-    const { id } = req.params;
-    try {
-        // Elimina el libro de la base de datos
-        const [result] = await pool.query('DELETE FROM libros WHERE id = ?', [id]);
-        // Verifica si el libro fue encontrado y eliminado
-        if (result.affectedRows === 0) return res.status(404).json({ error: 'Libro no encontrado' });
-        // Responde con un mensaje de éxito
-        res.json({ message: 'Libro eliminado correctamente' });
-    } catch (error) {
-        // Maneja errores y responde con un mensaje de error
-        res.status(500).json({ error: 'Error al eliminar el libro' });
-    }
-});
-
 // Rutas para miembros
 
-// Ruta para crear un nuevo miembro
+//! Ruta para crear un nuevo miembro
 router.post('/miembros', async (req, res) => {
     // Extrae los datos del miembro del cuerpo de la solicitud
     const { nombre, id } = req.body;
@@ -99,7 +58,7 @@ router.post('/miembros', async (req, res) => {
     }
 });
 
-// Ruta para obtener todos los miembros
+//! Ruta para obtener todos los miembros
 router.get('/miembros', async (req, res) => {
     try {
         // Consulta todos los miembros en la base de datos
@@ -112,26 +71,11 @@ router.get('/miembros', async (req, res) => {
     }
 });
 
-// Ruta para eliminar un miembro por ID
-router.delete('/miembros/:id', async (req, res) => {
-    // Extrae el ID del miembro de los parámetros de la URL
-    const { id } = req.params;
-    try {
-        // Elimina el miembro de la base de datos
-        const [result] = await pool.query('DELETE FROM miembros WHERE id = ?', [id]);
-        // Verifica si el miembro fue encontrado y eliminado
-        if (result.affectedRows === 0) return res.status(404).json({ error: 'Miembro no encontrado' });
-        // Responde con un mensaje de éxito
-        res.json({ message: 'Miembro eliminado correctamente' });
-    } catch (error) {
-        // Maneja errores y responde con un mensaje de error
-        res.status(500).json({ error: 'Error al eliminar el miembro' });
-    }
-});
 
-// Rutas para préstamos
 
-// Ruta para registrar un préstamo
+//! Rutas para préstamos
+
+//! Ruta para registrar un préstamo
 router.post('/prestamos', async (req, res) => {
     // Extrae los datos del préstamo del cuerpo de la solicitud
     const { idMiembro, idLibro } = req.body;
@@ -152,9 +96,9 @@ router.post('/prestamos', async (req, res) => {
     }
 });
 
-// Rutas para devoluciones
+//! Rutas para devoluciones
 
-// Ruta para registrar una devolución
+//! Ruta para registrar una devolución
 router.post('/devoluciones', async (req, res) => {
     // Extrae los datos de la devolución del cuerpo de la solicitud
     const { idMiembro, idLibro } = req.body;
@@ -186,5 +130,5 @@ router.post('/devoluciones', async (req, res) => {
     }
 });
 
-// Exporta el router para que pueda ser utilizado en otros módulos
+//! Exporta el router para que pueda ser utilizado en otros módulos
 module.exports = router;
